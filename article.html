@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>IRCNow</title>
+  <link rel="stylesheet" type="text/css" href="semantic.min.css">
+  <style type="text/css">
+    body {
+        background-color: #FFFFFF;
+    }
+    .ui.menu .item img.logo {
+        margin-right: 1.5em;
+    }
+    .main.container {
+        margin-top: 3.5em;
+        margin-bottom: 3.5em;
+    }
+    .ui.footer.segment {
+        margin: 5em 0em 0em;
+        padding: 5em 0em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Menu -->
+<div class="ui inverted stackable menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        <img class="logo" src="assets/images/logo.png">
+        IRCNow
+      </a>
+    <!--  
+    <div class="item">
+        <i class="book icon"></i>
+        <div class="content">
+            <div class="title">Wiki</div>
+        </div>
+    </div>
+    -->
+</div>
+    
+  <div class="right menu">
+    <div class="item">
+      <div class="ui transparent inverted icon input">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+    <div class="item">
+    <i class="user outline icon"></i>
+    <div class="content">
+      <div class="title">Sign Up</div>
+    </div>
+      </div>
+  </div>
+</div>
+<div class="pusher">
+<div class="ui stackable one column grid container">
+  <div class="column">
+    <div class="ui breadcrumb">
+            <a class="section">Home</a>
+            <i class="right angle icon divider"></i>
+            <a class="section">OpenBSD guides</a>
+            <i class="right angle icon divider"></i>
+            <a class="section">Networking</a>
+            <i class="right angle icon divider"></i>
+            <a class="active section">Setup VPN on OpenBSD</a>
+    </div>
+    <div class="ui segments">
+        <div class="ui secondary segment">
+            <div class="ui secondary menu">
+                <h4 class="item header">
+                    <i class="book icon"></i>Setup VPN on OpenBSD
+                </h4>
+                <div class="right menu">
+                    <div class="ui secondary compact stackable menu">
+                        <a class="item">
+                            <i class="edit icon"></i>
+                            Edit
+                        </a>
+                        <a class="item">
+                            <i class="history icon"></i>
+                            Revisions
+                        </a>
+                            <a class="item">
+                            <i class="print icon"></i>
+                            Print
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui segment">
+    
+            <div style="margin: 1.5em;">            
+        
+            <h1>Introduction</h1>
+
+            <p>OpenBSD comes with iked(8), a modern, privilege-separated IKEv2 server. It can act both as responder, e.g. a server receiving connection requests, or initiator, e.g. a client initiating a connection to a responder. The ikectl(8) utility is used to control the server, which gets its configuration from the iked.conf(5) file.</p>
+
+            <p>The ikectl(8) utility also allows you to maintain a simple X.509 certificate authority (CA) for IKEv2 peers.</p>
+
+            <p>An IKEv1 server (isakmpd(8)) is also available and, coupled with npppd(8), it allows you to build an IKEv1/L2TP VPN where IKEv2 can't be deployed.</p>
+
+    <h1>Authentication</h1>
+    <p>iked(8) supports the following methods of authentication:</p>        
+            <div class="ui bulleted list">
+                <div class="item">pre-shared key (not recommended)</div>
+                <div class="item">RSA & ECDSA public keys: easy setup when connecting to iked, RouterOS and some other implementations</div>
+                <div class="item">EAP MSCHAPv2 (with an X.509 certificate on the server side): iked supports this on the "responder" (server) side only</div>
+                <div class="item">X.509 certificates: often required for Windows, Android & Apple clients</div>
+            </div>
+            <p>By default, an RSA public key is generated at boot in /etc/iked/local.pub, with the private key being stored in /etc/iked/private/local.key.</p>
+        </div>
+        </div>
+    </div>
+   </div>
+</div>
+
+<!-- Footer -->
+<div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height grid">
+        <div class="three wide column">
+          <h5 class="ui inverted header">About</h5>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Team</a>
+            <a href="#" class="item">Goals</a>
+            <a href="#" class="item">Terms of Service</a>
+            <a href="#" class="item">Privacy Policy</a>
+            <a href="#" class="item">Contact us</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h5 class="ui inverted header">Services</h5>
+          <div class="ui inverted link list">
+            <a href="#" class="item">IRC Bouncers</a>
+            <a href="#" class="item">IRC Bots</a>
+            <a href="#" class="item">E-mail</a>
+            <a href="#" class="item">VPN</a>
+            <a href="#" class="item">Code hosting</a>
+            <a href="#" class="item">File storage</a>
+            <a href="#" class="item">Shell accounts</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h5 class="ui inverted header">Contribute</h5>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Documentation</a>
+            <a href="#" class="item">Testing</a>
+            <a href="#" class="item">Development</a>
+            <a href="#" class="item">Support</a>
+            <a href="#" class="item">Donations</a>
+          </div>
+        </div>
+        
+        <div class="seven wide column">
+            <h5>IRCNow</h5>
+            <i class="phone icon"></i>1(458)888-2063
+            <br />
+            <i class="envelope outline icon"></i>PO Box 35-48 Taichung 40699
+            </address>
+        </div>
+        
+      </div>
+    </div>
+</div>
+  
+</body>
+</html>
